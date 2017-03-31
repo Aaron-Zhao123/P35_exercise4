@@ -4,7 +4,6 @@ module Large_Matrix_Mult(
   Res,
   rdata,
   read_en,
-  wdata,
   write_en,
   write_ready
   );
@@ -18,7 +17,6 @@ module Large_Matrix_Mult(
   input read_en, write_en;
   // output ports
   output[NUM_ELEMENTS*WIDTH-1:0] Res;
-  output[NUM_ELEMENTS*WIDTH-1:0] wdata;
   output write_ready;
 
   //internal variables
@@ -91,4 +89,5 @@ module Large_Matrix_Mult(
       end
     end
   end
+  assign Res=wdata;
 endmodule
