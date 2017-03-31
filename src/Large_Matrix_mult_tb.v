@@ -38,7 +38,7 @@ module Large_Matrix_mult_tb();
   always @ (negedge clk) begin
     reset <= 0;
   end
-  
+
   initial
    #300 $finish;
 
