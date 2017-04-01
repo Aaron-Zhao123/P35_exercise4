@@ -25,7 +25,7 @@ module Large_Matrix_Mult(
   reg[NUM_ELEMENTS*WIDTH-1:0] wdata;
   wire[2*WIDTH-1:0] product [0:MATRIX_WIDTH-1][0:MATRIX_WIDTH-1][0:MATRIX_WIDTH-1];
   wire[2*WIDTH-1:0] Res1 [0:MATRIX_WIDTH-1][0:MATRIX_WIDTH-1];
-  wire output_ready;
+  wire output_ready[0:MATRIX_WIDTH-1][0:MATRIX_WIDTH-1][0:MATRIX_WIDTH-1];
 
   reg[MATRIX_WIDTH*MATRIX_WIDTH-1:0] element_cnt;
   reg[MATRIX_WIDTH-1:0] row_cnt, col_cnt;
@@ -66,7 +66,7 @@ module Large_Matrix_Mult(
   for(i=0;i < MATRIX_WIDTH;i=i+1) begin
     for(j=0;j < MATRIX_WIDTH;j=j+1) begin
         for(k=0;k < MATRIX_WIDTH;k=k+1) begin
-          p_multiplier m1(clk, input_ready, output_ready, reset, A1[i][k], B1[k][j], product[i][j][k]);
+          p_multiplier m1(clk, input_ready, output_ready[i][j][k], reset, A1[i][k], B1[k][j], product[i][j][k]);
         end
         // adder tree
         assign Res1[i][j] = product[i][j][0] + product[i][j][1] + product[i][j][2] + product[i][j][3];
@@ -80,7 +80,7 @@ module Large_Matrix_Mult(
       o_row_cnt <= 0;
       write_ready <= 0;
     end
-    if (write_en && output_ready) begin
+    if (write_en && output_ready[0][0][0]) begin
       wdata <= {Res1[o_row_cnt][o_col_cnt], Res1[o_row_cnt+1][o_col_cnt],Res1[o_row_cnt+2][o_col_cnt],Res1[o_row_cnt+3][o_col_cnt]};
       o_col_cnt <= o_col_cnt + 1;
       write_ready <= 1;
