@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module Large_Matrix_mult_tb();
 
   parameter WIDTH = 8;

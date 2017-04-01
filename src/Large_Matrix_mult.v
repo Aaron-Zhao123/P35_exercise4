@@ -33,24 +33,26 @@ module Large_Matrix_Mult(
   reg input_ready, write_ready;
 
 
-
+  initial begin
+    element_cnt <= 0;
+  end
   // load to mem
   always @(posedge clk) begin
     if (reset == 1'b1) begin
       element_cnt <= 0;
-      row_cnt <= 0;
-      col_cnt <= 0;
+      row_cnt = 0;
+      col_cnt = 0;
     end
     else begin
       if(read_en == 1'b1) begin
         element_cnt <= element_cnt + 1'b1;
         // this row count will overflow
         //add two because 4 datas are read in everytime, 2 for A and 2 for B
-        row_cnt <= row_cnt + 2'd2;
-        if (row_cnt == MATRIX_WIDTH-1) begin
-          col_cnt <= col_cnt + 1'b1;
-        end
         {A1[row_cnt][col_cnt], A1[row_cnt+1][col_cnt],B1[row_cnt][col_cnt],B1[row_cnt+1][col_cnt]} = rdata;
+        row_cnt = row_cnt + 2'd2;
+        if (row_cnt == MATRIX_WIDTH-1) begin
+          col_cnt = col_cnt + 1'b1;
+        end
         if ( row_cnt == MATRIX_WIDTH - 1 && col_cnt == MATRIX_WIDTH -1) begin
           input_ready <= 1;
         end
