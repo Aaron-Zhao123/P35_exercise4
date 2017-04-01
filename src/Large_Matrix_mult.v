@@ -32,11 +32,19 @@ module Large_Matrix_Mult(
   reg[MATRIX_WIDTH-1:0] o_row_cnt, o_col_cnt;
   reg input_ready, write_ready;
 
+  integer m;
+  integer n;
 
   initial begin
     element_cnt <= 0;
     row_cnt = 0;
     col_cnt = 0;
+    for(m=0;m < MATRIX_WIDTH;m=m+1) begin
+      for(n=0;n < MATRIX_WIDTH;n=n+1) begin
+        A1[m][n] = 0;
+        B1[m][n] = 0;
+      end
+    end
   end
   // load to mem
   always @(posedge clk) begin
@@ -44,6 +52,12 @@ module Large_Matrix_Mult(
       element_cnt <= 0;
       row_cnt = 0;
       col_cnt = 0;
+      for(m=0;m < MATRIX_WIDTH;m=m+1) begin
+        for(n=0;n < MATRIX_WIDTH;n=n+1) begin
+          A1[m][n] = 0;
+          B1[m][n] = 0;
+        end
+      end
     end
     else begin
       if(read_en == 1'b1) begin
@@ -56,7 +70,7 @@ module Large_Matrix_Mult(
           col_cnt = col_cnt + 1'b1;
           row_cnt = 0;
         end
-        if ( row_cnt == MATRIX_WIDTH - 1 && col_cnt == MATRIX_WIDTH -1) begin
+        if ( row_cnt == MATRIX_WIDTH && col_cnt == MATRIX_WIDTH ) begin
           input_ready <= 1;
         end
         else begin

@@ -29,8 +29,10 @@ module p_multiplier (
 
   integer i;
   initial begin
-     for (i = 0; i < MULT_LATENCY+1; i = i+1)
+     for (i = 0; i < MULT_LATENCY+1; i = i+1) begin
         M[i] <= 0;
+        ready_reg[i] <= 0;
+     end
      rA <= 0;
      rB <= 0;
   end
@@ -46,6 +48,7 @@ module p_multiplier (
         rA <= dataa;
         rB <= datab;
         M[0] <= rA * rB;
+        ready_reg[0] <= 1;
         for (i = 0; i < MULT_LATENCY; i = i+1)
           M[i+1] <= M[i];
           ready_reg[i+1] <= ready_reg[i];
