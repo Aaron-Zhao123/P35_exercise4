@@ -53,9 +53,10 @@ module p_multiplier (
         rB <= datab;
         M[0] <= rA * rB;
         ready_reg[0] <= 1;
-        for (i = 0; i < MULT_LATENCY; i = i+1)
+        for (i = 0; i < MULT_LATENCY; i = i+1) begin
           M[i+1] <= M[i];
           ready_reg[i+1] <= ready_reg[i];
+        end
       end
     end
   end

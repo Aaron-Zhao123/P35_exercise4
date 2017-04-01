@@ -100,11 +100,18 @@ module Large_Matrix_Mult(
   end
 
   // assign Res = {Res1[0][0],Res1[0][1],Res1[1][0],Res1[1][1]};
+  initial begin
+    o_col_cnt <= 0;
+    o_row_cnt <= 0;
+    write_ready <= 0;
+    wdata <= 0;
+  end
   always @ (posedge clk) begin
     if (reset) begin
       o_col_cnt <= 0;
       o_row_cnt <= 0;
       write_ready <= 0;
+      wdata <= 0;
     end
     if (write_en && output_ready[0][0][0]) begin
       wdata <= {Res1[o_row_cnt][o_col_cnt], Res1[o_row_cnt+1][o_col_cnt],Res1[o_row_cnt+2][o_col_cnt],Res1[o_row_cnt+3][o_col_cnt]};
