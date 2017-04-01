@@ -32,6 +32,7 @@ module Large_Matrix_Mult(
   reg[MATRIX_WIDTH-1:0] o_row_cnt, o_col_cnt;
   reg input_ready, write_ready;
   reg mem_not_full;
+  reg out_mem_not_empty;
 
   integer m;
   integer n;
@@ -105,6 +106,7 @@ module Large_Matrix_Mult(
     o_row_cnt <= 0;
     write_ready <= 0;
     wdata <= 0;
+    out_mem_not_empty <= 1;
   end
   always @ (posedge clk) begin
     if (reset) begin
@@ -112,13 +114,15 @@ module Large_Matrix_Mult(
       o_row_cnt <= 0;
       write_ready <= 0;
       wdata <= 0;
+      out_mem_not_empty <= 1;
     end
-    if (write_en && output_ready[0][0][0]) begin
+    if (write_en && output_ready[0][0][0] && out_mem_not_empty) begin
       wdata <= {Res1[o_row_cnt][o_col_cnt], Res1[o_row_cnt+1][o_col_cnt],Res1[o_row_cnt+2][o_col_cnt],Res1[o_row_cnt+3][o_col_cnt]};
       o_col_cnt <= o_col_cnt + 1;
       write_ready <= 1;
-      if (o_col_cnt == MATRIX_WIDTH - 1) begin
+      if (o_col_cnt == MATRIX_WIDTH) begin
         write_ready <= 0;
+        out_mem_not_empty <= 0;
       end
     end
   end
