@@ -125,6 +125,9 @@ module Large_Matrix_Mult(
         out_mem_not_empty <= 0;
       end
     end
+    else begin
+      wdata <= 0;
+    end
   end
   assign Res=wdata;
 endmodule
