@@ -35,6 +35,8 @@ module Large_Matrix_Mult(
 
   initial begin
     element_cnt <= 0;
+    row_cnt = 0;
+    col_cnt = 0;
   end
   // load to mem
   always @(posedge clk) begin
