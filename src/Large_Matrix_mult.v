@@ -121,6 +121,7 @@ module Large_Matrix_Mult(
       o_col_cnt <= o_col_cnt + 1;
       write_ready <= 1;
       if (o_col_cnt == MATRIX_WIDTH) begin
+        wdata <= 0;
         write_ready <= 0;
         out_mem_not_empty <= 0;
       end
