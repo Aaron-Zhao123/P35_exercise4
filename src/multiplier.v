@@ -40,6 +40,10 @@ module p_multiplier (
   always @ (posedge clk)
   begin
     if (reset == 1'b1) begin
+        for (i = 0; i < MULT_LATENCY+1; i = i+1) begin
+           M[i] <= 0;
+           ready_reg[i] <= 0;
+        end
         rA <= 0;
         rB <= 0;
     end

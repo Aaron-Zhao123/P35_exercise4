@@ -31,6 +31,7 @@ module Large_Matrix_Mult(
   reg[MATRIX_WIDTH-1:0] row_cnt, col_cnt;
   reg[MATRIX_WIDTH-1:0] o_row_cnt, o_col_cnt;
   reg input_ready, write_ready;
+  reg mem_not_full;
 
   integer m;
   integer n;
@@ -45,6 +46,8 @@ module Large_Matrix_Mult(
         B1[m][n] = 0;
       end
     end
+    input_ready <= 0;
+    mem_not_full <= 1;
   end
   // load to mem
   always @(posedge clk) begin
@@ -58,9 +61,11 @@ module Large_Matrix_Mult(
           B1[m][n] = 0;
         end
       end
+      input_ready <= 0;
+      mem_not_full <= 1;
     end
     else begin
-      if(read_en == 1'b1) begin
+      if(read_en == 1'b1 && mem_not_full == 1'b1) begin
         element_cnt <= element_cnt + 1'b1;
         // this row count will overflow
         //add two because 4 datas are read in everytime, 2 for A and 2 for B
@@ -72,9 +77,11 @@ module Large_Matrix_Mult(
         end
         if ( row_cnt == MATRIX_WIDTH && col_cnt == MATRIX_WIDTH ) begin
           input_ready <= 1;
+          mem_not_full <= 0;
         end
         else begin
           input_ready <= 0;
+          mem_not_full <= 1;
         end
       end
     end
