@@ -31,7 +31,7 @@ module Large_Matrix_mult_uip_tb();
   initial begin
     reset = 0;
     clk = 0;
-    wdata = 1;
+    wdata = 32'h01010101;
     read_en = 1;
     write_en = 1;
     while (1) begin
