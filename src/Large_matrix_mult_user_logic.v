@@ -105,30 +105,42 @@ module Large_Matrix_Mult(
     end
   end
 
-  // assign Res = {Res1[0][0],Res1[0][1],Res1[1][0],Res1[1][1]};
   initial begin
     o_col_cnt <= 0;
     o_row_cnt <= 0;
     r_ready <= 0;
     rdata <= 0;
-    out_mem_not_empty <= 1;
+    out_mem_not_empty <= 0;
   end
+  // output mem not empty logic
+  always @ (posedge r_clk) begin
+    if (r_reset) begin
+      out_mem_not_empty <= 1;
+    end
+    else begin
+      if (output_ready[0][0][0] && o_col_cnt < MATRIX_WIDTH) begin
+        out_mem_not_empty <= 1;
+      end
+      if (o_col_cnt == MATRIX_WIDTH) begin
+        out_mem_not_empty <= 0;
+      end
+    end
+  end
+
   always @ (posedge r_clk) begin
     if (r_reset) begin
       o_col_cnt <= 0;
       o_row_cnt <= 0;
       r_ready <= 0;
       rdata <= 0;
-      out_mem_not_empty <= 1;
     end
-    if (r_en && output_ready[0][0][0] && out_mem_not_empty) begin
+    if (r_en && out_mem_not_empty) begin
       rdata <= {Res1[o_row_cnt][o_col_cnt], Res1[o_row_cnt+1][o_col_cnt],Res1[o_row_cnt+2][o_col_cnt],Res1[o_row_cnt+3][o_col_cnt]};
       o_col_cnt <= o_col_cnt + 1;
       r_ready <= 1;
       if (o_col_cnt == MATRIX_WIDTH) begin
         rdata <= 0;
         r_ready <= 0;
-        out_mem_not_empty <= 0;
       end
     end
     else begin
