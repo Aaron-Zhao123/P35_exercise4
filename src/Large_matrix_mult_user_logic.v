@@ -98,7 +98,7 @@ module Large_Matrix_Mult(
   for(i=0;i < MATRIX_WIDTH;i=i+1) begin
     for(j=0;j < MATRIX_WIDTH;j=j+1) begin
         for(k=0;k < MATRIX_WIDTH;k=k+1) begin
-          p_multiplier m1(clk, input_ready, output_ready[i][j][k], reset, A1[i][k], B1[k][j], product[i][j][k]);
+          p_multiplier m1(w_clk, input_ready, output_ready[i][j][k], reset, A1[i][k], B1[k][j], product[i][j][k]);
         end
         // adder tree
         assign Res1[i][j] = product[i][j][0] + product[i][j][1] + product[i][j][2] + product[i][j][3];
