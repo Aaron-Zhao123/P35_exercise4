@@ -1,0 +1,7 @@
+Running: xsim.dir/Large_Matrix_mult_uip_tb_behav/xsimk -simmode gui -wdb Large_Matrix_mult_uip_tb_behav.wdb -simrunnum 0 -socket 50381
+Design successfully loaded
+Design Loading Memory Usage: 50020 KB (Peak: 50108 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 135856 KB (Peak: 197292 KB)
+Simulation CPU Usage: 20 ms

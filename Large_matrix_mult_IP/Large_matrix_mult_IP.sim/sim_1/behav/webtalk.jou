@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Wed Apr  5 03:06:20 2017
+# Process ID: 79405
+# Current directory: /home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.sim/sim_1/behav
+# Command line: wbtcv -mode batch -source /home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.sim/sim_1/behav/xsim.dir/Large_Matrix_mult_uip_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.sim/sim_1/behav/webtalk.log
+# Journal file: /home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.sim/sim_1/behav/webtalk.jou
+#-----------------------------------------------------------
+source /home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.sim/sim_1/behav/xsim.dir/Large_Matrix_mult_uip_tb_behav/webtalk/xsim_webtalk.tcl -notrace

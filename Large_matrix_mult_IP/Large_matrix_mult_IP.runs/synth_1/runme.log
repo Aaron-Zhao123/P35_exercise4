@@ -1,0 +1,1018 @@
+
+*** Running vivado
+    with args -log Large_Matrix_Mult.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Large_Matrix_Mult.tcl
+
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source Large_Matrix_Mult.tcl -notrace
+Command: synth_design -top Large_Matrix_Mult -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 53189 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1055.559 ; gain = 125.086 ; free physical = 140 ; free virtual = 2030
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Large_Matrix_Mult' [/home/aaron/Project/P35_exercise4/src/Large_Matrix_mult.v:1]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter NUM_ELEMENTS bound to: 4 - type: integer 
+	Parameter MATRIX_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'p_multiplier' [/home/aaron/Project/P35_exercise4/src/multiplier.v:4]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter MULT_LATENCY bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'p_multiplier' (1#1) [/home/aaron/Project/P35_exercise4/src/multiplier.v:4]
+WARNING: [Synth 8-5856] 3D RAM A1_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM B1_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-256] done synthesizing module 'Large_Matrix_Mult' (2#1) [/home/aaron/Project/P35_exercise4/src/Large_Matrix_mult.v:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1097.027 ; gain = 166.555 ; free physical = 114 ; free virtual = 1987
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1097.027 ; gain = 166.555 ; free physical = 114 ; free virtual = 1987
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.031 ; gain = 174.559 ; free physical = 113 ; free virtual = 1987
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-5544] ROM "A1_reg[0][0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A1_reg[0][1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A1_reg[0][2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A1_reg[0][3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "write_ready" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1121.047 ; gain = 190.574 ; free physical = 108 ; free virtual = 1972
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     16 Bit       Adders := 16    
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 64    
+	                8 Bit    Registers := 96    
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 260   
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 10    
+	   2 Input      8 Bit        Muxes := 32    
+	   2 Input      1 Bit        Muxes := 47    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Large_Matrix_Mult 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     16 Bit       Adders := 16    
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 32    
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 10    
+	   2 Input      8 Bit        Muxes := 32    
+	   2 Input      1 Bit        Muxes := 47    
+Module p_multiplier 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+DSP Report: Generating DSP M_reg[2], operation Mode is: (A''*B'')'.
+DSP Report: register rB_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register rA_reg is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[0] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[2] is absorbed into DSP M_reg[2].
+DSP Report: register M_reg[1] is absorbed into DSP M_reg[2].
+DSP Report: operator p_0_out is absorbed into DSP M_reg[2].
+INFO: [Synth 8-3886] merging instance 'o_row_cnt_reg[1]' (FDRE) to 'o_row_cnt_reg[0]'
+INFO: [Synth 8-3886] merging instance 'o_row_cnt_reg[2]' (FDRE) to 'o_row_cnt_reg[0]'
+INFO: [Synth 8-3886] merging instance 'o_row_cnt_reg[3]' (FDRE) to 'o_row_cnt_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\o_row_cnt_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (o_row_cnt_reg[0]) is unused and will be removed from module Large_Matrix_Mult.
+WARNING: [Synth 8-3332] Sequential element (row_cnt_reg[0]) is unused and will be removed from module Large_Matrix_Mult.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][15]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][14]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][13]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][12]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][11]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][10]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][9]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][8]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][7]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][6]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][5]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][4]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][3]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][2]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][1]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][0]) is unused and will be removed from module p_multiplier__1.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[0]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[1]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[2]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[3]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][15]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][14]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][13]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][12]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][11]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][10]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][9]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][8]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][7]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][6]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][5]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][4]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][3]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][2]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][1]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][0]) is unused and will be removed from module p_multiplier__2.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[0]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[1]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[2]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[3]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][15]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][14]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][13]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][12]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][11]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][10]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][9]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][8]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][7]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][6]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][5]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][4]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][3]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][2]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][1]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][0]) is unused and will be removed from module p_multiplier__3.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[0]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[1]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[2]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[3]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][15]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][14]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][13]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][12]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][11]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][10]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][9]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][8]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][7]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][6]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][5]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][4]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][3]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][2]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][1]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][0]) is unused and will be removed from module p_multiplier__4.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[0]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[1]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[2]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[3]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][15]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][14]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][13]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][12]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][11]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][10]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][9]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][8]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][7]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][6]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][5]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][4]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][3]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][2]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][1]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (M_reg[3][0]) is unused and will be removed from module p_multiplier__5.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[0]) is unused and will be removed from module p_multiplier__6.
+WARNING: [Synth 8-3332] Sequential element (ready_reg_reg[1]) is unused and will be removed from module p_multiplier__6.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1243.086 ; gain = 312.613 ; free physical = 105 ; free virtual = 1856
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|p_multiplier | (A''*B'')'  | 8      | 8      | -      | -      | 16     | 2    | 2    | -    | -    | -     | 1    | 1    | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1243.086 ; gain = 312.613 ; free physical = 105 ; free virtual = 1856
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.094 ; gain = 320.621 ; free physical = 124 ; free virtual = 1850
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.094 ; gain = 320.621 ; free physical = 124 ; free virtual = 1850
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.094 ; gain = 320.621 ; free physical = 124 ; free virtual = 1850
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.094 ; gain = 320.621 ; free physical = 124 ; free virtual = 1850
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.094 ; gain = 320.621 ; free physical = 124 ; free virtual = 1850
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.094 ; gain = 320.621 ; free physical = 124 ; free virtual = 1850
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.094 ; gain = 320.621 ; free physical = 124 ; free virtual = 1850
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name       | RTL Name                                             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Large_Matrix_Mult | genblk1[0].genblk1[0].genblk1[0].m1/ready_reg_reg[3] | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    32|
+|3     |DSP48E1 |    32|
+|4     |LUT1    |     2|
+|5     |LUT2    |     3|
+|6     |LUT3    |   185|
+|7     |LUT4    |    37|
+|8     |LUT5    |   122|
+|9     |LUT6    |   145|
+|10    |SRL16E  |     1|
+|11    |FDRE    |   757|
+|12    |FDSE    |     1|
+|13    |IBUF    |    36|
+|14    |OBUF    |    33|
++------+--------+------+
+
+Report Instance Areas: 
++------+----------------------------------------+----------------+------+
+|      |Instance                                |Module          |Cells |
++------+----------------------------------------+----------------+------+
+|1     |top                                     |                |  1387|
+|2     |  \genblk1[0].genblk1[0].genblk1[0].m1  |p_multiplier    |     9|
+|3     |  \genblk1[2].genblk1[0].genblk1[0].m1  |p_multiplier_0  |    18|
+|4     |  \genblk1[2].genblk1[0].genblk1[1].m1  |p_multiplier_1  |    22|
+|5     |  \genblk1[2].genblk1[0].genblk1[2].m1  |p_multiplier_2  |    60|
+|6     |  \genblk1[2].genblk1[0].genblk1[3].m1  |p_multiplier_3  |    17|
+|7     |  \genblk1[2].genblk1[1].genblk1[0].m1  |p_multiplier_4  |    18|
+|8     |  \genblk1[2].genblk1[1].genblk1[1].m1  |p_multiplier_5  |    22|
+|9     |  \genblk1[2].genblk1[1].genblk1[2].m1  |p_multiplier_6  |    60|
+|10    |  \genblk1[2].genblk1[1].genblk1[3].m1  |p_multiplier_7  |    17|
+|11    |  \genblk1[2].genblk1[2].genblk1[0].m1  |p_multiplier_8  |    18|
+|12    |  \genblk1[2].genblk1[2].genblk1[1].m1  |p_multiplier_9  |    22|
+|13    |  \genblk1[2].genblk1[2].genblk1[2].m1  |p_multiplier_10 |    60|
+|14    |  \genblk1[2].genblk1[2].genblk1[3].m1  |p_multiplier_11 |    17|
+|15    |  \genblk1[2].genblk1[3].genblk1[0].m1  |p_multiplier_12 |    18|
+|16    |  \genblk1[2].genblk1[3].genblk1[1].m1  |p_multiplier_13 |    22|
+|17    |  \genblk1[2].genblk1[3].genblk1[2].m1  |p_multiplier_14 |    60|
+|18    |  \genblk1[2].genblk1[3].genblk1[3].m1  |p_multiplier_15 |    17|
+|19    |  \genblk1[3].genblk1[0].genblk1[0].m1  |p_multiplier_16 |    18|
+|20    |  \genblk1[3].genblk1[0].genblk1[1].m1  |p_multiplier_17 |    22|
+|21    |  \genblk1[3].genblk1[0].genblk1[2].m1  |p_multiplier_18 |    60|
+|22    |  \genblk1[3].genblk1[0].genblk1[3].m1  |p_multiplier_19 |    17|
+|23    |  \genblk1[3].genblk1[1].genblk1[0].m1  |p_multiplier_20 |    18|
+|24    |  \genblk1[3].genblk1[1].genblk1[1].m1  |p_multiplier_21 |    22|
+|25    |  \genblk1[3].genblk1[1].genblk1[2].m1  |p_multiplier_22 |    60|
+|26    |  \genblk1[3].genblk1[1].genblk1[3].m1  |p_multiplier_23 |    17|
+|27    |  \genblk1[3].genblk1[2].genblk1[0].m1  |p_multiplier_24 |    18|
+|28    |  \genblk1[3].genblk1[2].genblk1[1].m1  |p_multiplier_25 |    22|
+|29    |  \genblk1[3].genblk1[2].genblk1[2].m1  |p_multiplier_26 |    60|
+|30    |  \genblk1[3].genblk1[2].genblk1[3].m1  |p_multiplier_27 |    17|
+|31    |  \genblk1[3].genblk1[3].genblk1[0].m1  |p_multiplier_28 |    18|
+|32    |  \genblk1[3].genblk1[3].genblk1[1].m1  |p_multiplier_29 |    22|
+|33    |  \genblk1[3].genblk1[3].genblk1[2].m1  |p_multiplier_30 |    60|
+|34    |  \genblk1[3].genblk1[3].genblk1[3].m1  |p_multiplier_31 |    17|
++------+----------------------------------------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.094 ; gain = 320.621 ; free physical = 124 ; free virtual = 1850
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 832 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1251.094 ; gain = 240.531 ; free physical = 124 ; free virtual = 1850
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1251.102 ; gain = 320.629 ; free physical = 126 ; free virtual = 1853
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 100 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1323.840 ; gain = 325.863 ; free physical = 116 ; free virtual = 1803
+INFO: [Common 17-1381] The checkpoint '/home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.runs/synth_1/Large_Matrix_Mult.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.24 . Memory (MB): peak = 1323.840 ; gain = 0.000 ; free physical = 140 ; free virtual = 1803
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  1 00:33:55 2017...

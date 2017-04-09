@@ -1,0 +1,9 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/aaron/Project/P35_exercise4/src/multiplier.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module p_multiplier
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/aaron/Project/P35_exercise4/src/Large_matrix_mult_user_logic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Large_Matrix_Mult
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/aaron/Project/P35_exercise4/src/Large_Matrix_mult_uip_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Large_Matrix_mult_uip_tb
+INFO: [VRFC 10-2458] undeclared symbol read_ready, assumed default net type wire [/home/aaron/Project/P35_exercise4/src/Large_Matrix_mult_uip_tb.v:24]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sat Apr  1 00:33:22 2017
+# Process ID: 52866
+# Current directory: /home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.runs/synth_1
+# Command line: vivado -log Large_Matrix_Mult.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Large_Matrix_Mult.tcl
+# Log file: /home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.runs/synth_1/Large_Matrix_Mult.vds
+# Journal file: /home/aaron/Project/P35_exercise4/Large_matrix_mult_IP/Large_matrix_mult_IP.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source Large_Matrix_Mult.tcl -notrace
